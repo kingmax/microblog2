@@ -9,9 +9,8 @@
     {% endif %}
 </head>
 <body>
-    <h1>Hello, {{ user.username }}!</h1>
-    {% for post in posts %}
-        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+    <div>Microblog: <a href="/index">Home</a> </div>
+    <hr>
+    {% block content %}{% endblock %}
 </body>
 </html>
