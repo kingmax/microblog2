@@ -2,6 +2,7 @@ from theApp import app
 from flask import render_template
 from .forms import LoginForm
 from flask import flash, redirect
+from flask import url_for
 
 
 @app.route('/')
@@ -28,5 +29,6 @@ def login():
     if form.validate_on_submit():
         flash(f'Login requested for user {form.username.data}, '
               f'remember_me={form.remember_me.data}')
-        return redirect('/index')
+        # return redirect('/index')
+        return redirect(url_for('index'))
     return render_template('login.html', title='Sign In', form=form)
